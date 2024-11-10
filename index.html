@@ -28,11 +28,55 @@
     </div>
 
     
-    <button onclick="generatePlaylist()" type="button" class="btn btn-danger">Get playlist</button>
+    <button onclick="getPlaylist(document.getElementById('moodSelect').value)" type="button" class="btn btn-danger">Get playlist</button>
     <div id="playlist"></div>
   </div>
 </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
+  <script>
+  const CLIENT_ID = 'e22b5e00b4ad4d72a6bde0c76f8a6e79';
+  const REDIRECT_URI = 'https://longneckostrich.github.io/moodSings/';
+  const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
+  const RESPONSE_TYPE = 'token';
+
+  // Redirect to Spotify authorization page
+  function authenticateSpotify() {
+    window.location = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-read-private`;
+  }
+
+  // Extract the access token from URL
+  const hash = window.location.hash;
+  let token = null;
+  if (hash) {
+    token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
+    window.location.hash = ""; // Remove token from URL
+  }
+
+  async function getPlaylist(mood) {
+    if (!token) {
+      authenticateSpotify();
+      return;
+    }
+
+    const response = await fetch(`https://api.spotify.com/v1/search?q=${mood}&type=playlist&limit=1`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    const data = await response.json();
+
+    if (data.playlists.items.length > 0) {
+      const playlist = data.playlists.items[0];
+      document.getElementById("playlist").innerHTML = `
+        <h3>${playlist.name}</h3>
+        <a href="${playlist.external_urls.spotify}" target="_blank">Open Playlist</a>
+      `;
+    } else {
+      document.getElementById("playlist").textContent = "No playlists found.";
+    }
+  }
+</script>
+
 </html>
