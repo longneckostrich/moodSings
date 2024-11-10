@@ -38,18 +38,32 @@ h1 {
 }
 
 /* Button Styling */
-.btn-primary {
-  background-color: #ff6b6b;
-  border-color: #ff6b6b;
+
+/* General button styling */
+.btn-open-playlist {
+  background-color: #32cd32; /* Bright green */
+  color: #fff;
+  border: none;
   padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 18px;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  font-size: 1.2rem;
+  border-radius: 30px; /* Rounded corners */
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(50, 205, 50, 0.3);
+  transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: #ff4757;
-  transform: translateY(-3px);
+
+/* Button focus effect */
+.btn-open-playlist:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
+}
+
+/* Optional: add smooth transition for box-shadow */
+.btn-open-playlist:active {
+  transform: translateY(2px); /* Slightly depressed on click */
 }
 
 /* Playlist card styling */
