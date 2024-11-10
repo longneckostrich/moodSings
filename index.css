@@ -1,19 +1,13 @@
-/* Ensure the html and body take full height */
-html, body {
-  height: 100%;
+/* General Reset */
+body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc) !important; /* Apply gradient */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
 }
 
-/* Add a minimum height to body */
-body {
-  min-height: 100vh; /* Ensure the body takes the full viewport height */
-}
-
-/* Container styling */
+/* Container Styling */
 .container {
   text-align: center;
   padding-top: 50px;
@@ -26,7 +20,7 @@ h1 {
   color: #fff;
 }
 
-/* Dropdown and button styling */
+/* Dropdown & Button Styling */
 .form-select {
   width: 300px;
   padding: 10px;
@@ -38,35 +32,21 @@ h1 {
 }
 
 /* Button Styling */
-
-/* General button styling */
-.btn-open-playlist {
-  background-color: #32cd32; /* Bright green */
-  color: #fff;
-  border: none;
+.btn-primary {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
   padding: 10px 20px;
-  font-size: 1.2rem;
-  border-radius: 30px; /* Rounded corners */
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(50, 205, 50, 0.3);
-  transition: all 0.3s ease;
+  border-radius: 25px;
+  font-size: 18px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-
-/* Button focus effect */
-.btn-open-playlist:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
+.btn-primary:hover {
+  background-color: #ff4757;
+  transform: translateY(-3px);
 }
 
-/* Optional: add smooth transition for box-shadow */
-.btn-open-playlist:active {
-  transform: translateY(2px); /* Slightly depressed on click */
-}
-
-/* Playlist card styling */
+/* Playlist Card Styling */
 #playlist {
   max-width: 500px;
   margin: 20px auto;
@@ -84,6 +64,17 @@ h1 {
   max-width: 100%;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+/* Playlist Button Styling */
+a.btn-success {
+  background-color: #32cd32;
+  border-color: #32cd32;
+  border-radius: 25px;
+}
+
+a.btn-success:hover {
+  background-color: #28a745;
 }
 
 /* Flexbox Layout */
