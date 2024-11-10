@@ -67,16 +67,38 @@ h1 {
 }
 
 /* Playlist Button Styling */
-a.btn-success {
-  background-color: #32cd32;
-  border-color: #32cd32;
-  border-radius: 25px;
+/* General button styling */
+.btn-open-playlist {
+  background-color: #32cd32; /* Bright green */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 30px; /* Rounded corners */
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(50, 205, 50, 0.3);
+  transition: all 0.3s ease;
 }
 
-a.btn-success:hover {
-  background-color: #28a745;
+/* Button hover effect */
+.btn-open-playlist:hover {
+  background-color: #28a745; /* Darker green on hover */
+  transform: translateY(-4px); /* Lift effect */
+  box-shadow: 0 10px 30px rgba(50, 205, 50, 0.4);
 }
 
+/* Button focus effect */
+.btn-open-playlist:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
+}
+
+/* Optional: add smooth transition for box-shadow */
+.btn-open-playlist:active {
+  transform: translateY(2px); /* Slightly depressed on click */
+}
 /* Flexbox Layout */
 .mood-container {
   display: flex;
