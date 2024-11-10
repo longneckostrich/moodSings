@@ -15,21 +15,16 @@
     <!-- Dropdown structure -->
     <div class="d-flex align-items-center gap-3">
       
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-        Choose Mood
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Happy</a></li>
-        <li><a class="dropdown-item" href="#">Sad</a></li>
-        <li><a class="dropdown-item" href="#">Energetic</a></li>
-        <li><a class="dropdown-item" href="#">Relaxed</a></li>
-      </ul>
-    </div>
+ <select id="moodSelect" class="form-select">
+  <option value="happy">Happy</option>
+  <option value="sad">Sad</option>
+  <option value="energetic">Energetic</option>
+  <option value="relaxed">Relaxed</option>
+</select>
+<br>
+<button onclick="getPlaylist(document.getElementById('moodSelect').value)" type="button" class="btn btn-primary">Get Playlist</button>
 
-    
-    <button onclick="getPlaylist(document.getElementById('moodSelect').value)" type="button" class="btn btn-danger">Get playlist</button>
-    <div id="playlist"></div>
+<div id="playlist"></div>
   </div>
 </div>
 </div>
