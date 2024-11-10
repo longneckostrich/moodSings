@@ -1,5 +1,102 @@
+/* General Reset */
 body {
-    background-color: #ffffff ;
-    color: #e43d12;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+/* Container Styling */
+.container {
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Header Styling */
+h1 {
+  margin-top: 50px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+/* Dropdown & Button Styling */
+.form-select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 18px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff4757;
+  transform: translateY(-3px);
+}
+
+/* Playlist Card Styling */
+#playlist {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.playlist-card {
+  background-color: #1e1e2e;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.playlist-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Playlist Button Styling */
+a.btn-success {
+  background-color: #32cd32;
+  border-color: #32cd32;
+  border-radius: 25px;
+}
+
+a.btn-success:hover {
+  background-color: #28a745;
+}
+
+/* Flexbox Layout */
+.mood-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
   }
 
+  .form-select {
+    width: 80%;
+  }
+
+  .btn-primary {
+    width: 80%;
+  }
+}
