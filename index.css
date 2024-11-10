@@ -1,9 +1,10 @@
-/* General Reset */
-body {
+/* Ensure the body and html take the full height */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient Background */
   color: #fff;
 }
 
@@ -100,3 +101,4 @@ a.btn-success:hover {
     width: 80%;
   }
 }
+
